@@ -1,2 +1,6 @@
 .DS_Store
 .idea
+
+# Ignore data directories
+db-data/
+rabbitmq-data/
