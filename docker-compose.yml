@@ -1,14 +1,32 @@
 version: "3.9"
 services:
-  user-service:
-    build: ./user-service
+  user-service-nginx:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile.nginx
     ports:
-      - "8001:80"
+      - "80:80"
+    depends_on:
+      - user-service-php
+    volumes:
+      - ./user-service:/var/www/html
+      - ./user-service/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - user-service_network
+  user-service-php:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile.php
     depends_on:
       - rabbitmq
       - db
     env_file:
       - ./user-service/.env
+    volumes:
+      - ./user-service:/var/www/html
+    networks:
+      - user-service_network
+
   notification-service:
     build: ./notification-service
     ports:
@@ -31,6 +49,14 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: user_service_db,notification_service_db
+      MYSQL_DATABASE: database
     volumes:
+      - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
       - ./db-data:/var/lib/mysql
+    networks:
+      - user-service_network
+
+
+networks:
+  user-service_network:
+    driver: bridge
