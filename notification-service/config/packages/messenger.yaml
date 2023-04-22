@@ -1,0 +1,15 @@
+framework:
+  messenger:
+    buses:
+      command.bus:
+        middleware:
+          - App\Application\Command\LogEventToFileHandler
+        default_middleware: true
+    transports:
+      rabbitmq:
+        dsn: "%env(RABBITMQ_DSN)%"
+        options:
+          queue:
+            name: "%env(QUEUE_NAME)%"
+    routing:
+      'App\Domain\Event\RabbitMqEvent': rabbitmq
