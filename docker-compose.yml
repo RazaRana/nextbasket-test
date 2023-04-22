@@ -30,12 +30,14 @@ services:
   notification-service:
     build: ./notification-service
     ports:
-      - "8002:80"
+      - "8002:8002"
     depends_on:
       - rabbitmq
       - db
     env_file:
       - ./notification-service/.env
+    networks:
+      - notification-service_network
   rabbitmq:
     image: rabbitmq:3.8-management-alpine
     ports:
@@ -43,6 +45,9 @@ services:
       - "5672:5672"
     volumes:
       - ./rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - user-service_network
+      - notification-service_network
   db:
     image: mysql:8.0
     ports:
@@ -59,4 +64,6 @@ services:
 
 networks:
   user-service_network:
+    driver: bridge
+  notification-service_network:
     driver: bridge
