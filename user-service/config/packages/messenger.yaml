@@ -1,8 +1,11 @@
+parameters:
+    rabbitmq_dsn: '%env(RABBITMQ_DSN)%'
+
 framework:
     messenger:
         transports:
             amqp:
-                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                dsn: '%rabbitmq_dsn%'
                 options:
                     queue_name: messenger
                 retry_strategy:
