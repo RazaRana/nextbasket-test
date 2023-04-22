@@ -2,12 +2,9 @@
 
 namespace App\Infrastructure\Web\Controller;
 
-use App\Application\Query\FindAllUsersQuery;
-use App\Domain\User\Exception\UserAlreadyExistsException;
 use App\Domain\User\Model\User;
-use App\Domain\User\Repository\UserRepositoryInterface;
 use App\Application\Command\CreateUserCommand;
-use App\Domain\User\Service\UserCreator;
+use App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,6 +46,9 @@ class UserController extends AbstractController
         }catch (Throwable $e) {
             return new JsonResponse([
                 'err' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTrace(),
                 'status' => 'error',
                 'message' => 'An error occurred while processing the request'
             ], Response::HTTP_INTERNAL_SERVER_ERROR);

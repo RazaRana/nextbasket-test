@@ -22,5 +22,28 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     App\Domain\User\Repository\UserRepositoryInterface: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineUserRepository'
+    App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer:
+        class: App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer
+        arguments:
+            - '@messenger.transport.amqp'
     App\Application\Command\CreateUserCommandHandler:
         autowire: true
+
+    messenger.transport.amqp:
+        alias: 'App\Infrastructure\Messaging\RabbitMQ\AmqpTransport'
+
+    Symfony\Component\Messenger\Transport\Sender\SenderInterface: '@messenger.transport.amqp'
+    rabbitmq.connection:
+        class: PhpAmqpLib\Connection\AMQPStreamConnection
+        arguments:
+            - '%env(RABBITMQ_HOST)%'
+            - '%env(RABBITMQ_PORT)%'
+            - '%env(RABBITMQ_USER)%'
+            - '%env(RABBITMQ_PASSWORD)%'
+    App\Infrastructure\Messaging\RabbitMQ\AmqpTransport:
+        arguments:
+            - '@Symfony\Component\Messenger\Transport\Serialization\SerializerInterface'
+            - '@rabbitmq.connection'
+            - '%env(RABBITMQ_QUEUE)%'
+            - '%env(QUEUE_NAME)%'
+        public: true
