@@ -8,8 +8,11 @@ RUN apt-get update && \
     unzip \
     libicu-dev \
     libzip-dev \
+    librabbitmq-dev \
     && docker-php-ext-install intl zip pdo_mysql \
-    && docker-php-ext-install sockets
+    && docker-php-ext-install sockets \
+    && pecl install amqp \
+    && docker-php-ext-enable amqp sockets
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 

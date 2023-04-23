@@ -1,15 +1,18 @@
+parameters:
+  rabbitmq_dsn: '%env(RABBITMQ_DSN)%'
+  user_created_exchange: '%env(USER_CREATED_EXCHANGE)%'
+  user_created_queue_name: '%env(USER_CREATED_QUEUE_NAME)%'
+
 framework:
   messenger:
-    buses:
-      command.bus:
-        middleware:
-          - App\Application\Command\LogEventToFileHandler
-        default_middleware: true
     transports:
       rabbitmq:
-        dsn: "%env(RABBITMQ_DSN)%"
+        dsn: "%rabbitmq_dsn%"
         options:
-          queue:
-            name: "%env(QUEUE_NAME)%"
+          exchange:
+            name: '%user_created_exchange%'
+            type: direct
+          queues:
+            '%user_created_queue_name%': ~
     routing:
-      'App\Domain\Event\RabbitMqEvent': rabbitmq
+      'App\Domain\User\Event\UserCreatedEvent': rabbitmq

@@ -2,6 +2,7 @@
 
 namespace App\Infrastructure\Messaging\RabbitMQ;
 
+use Exception;
 use PhpAmqpLib\Channel\AbstractChannel;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
@@ -18,18 +19,21 @@ class AmqpTransport implements TransportInterface
     private AbstractChannel|AMQPChannel $channel;
     private string $exchangeName;
     private string $queueName;
+    private string $routingKey;
 
     public function __construct(
         SerializerInterface $serializer,
         AMQPStreamConnection $connection,
         string $exchangeName,
-        string $queueName
+        string $queueName,
+        string $routingKey
     ) {
         $this->serializer = $serializer;
         $this->connection = $connection;
         $this->channel = $connection->channel();
         $this->exchangeName = $exchangeName;
         $this->queueName = $queueName;
+        $this->routingKey = $routingKey;
     }
 
     public function receive(callable $handler): void
@@ -82,7 +86,7 @@ class AmqpTransport implements TransportInterface
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function stop(): void
     {

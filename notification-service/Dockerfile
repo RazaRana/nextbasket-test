@@ -1,4 +1,4 @@
-FROM php:8.1-apache
+FROM php:8.1-fpm
 
 WORKDIR /var/www/html
 
@@ -8,8 +8,12 @@ RUN apt-get update && \
     unzip \
     libicu-dev \
     libzip-dev \
-    && docker-php-ext-install intl zip pdo_mysql \
-    && docker-php-ext-install sockets
+    librabbitmq-dev \
+    && docker-php-ext-install intl zip  \
+    && docker-php-ext-install sockets \
+    && docker-php-ext-install intl zip \
+    && pecl install amqp \
+    && docker-php-ext-enable amqp sockets
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -17,11 +21,6 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-COPY apache.conf /etc/apache2/sites-available/000-default.conf
-RUN a2enmod rewrite
+EXPOSE 9001
 
-# Expose port 80 for web traffic
-EXPOSE 80
-
-# Start Apache and listen for RabbitMQ messages
-CMD ["/bin/bash", "-c", "service apache2 start"]
+CMD ["php", "bin/console", "app:user-created-event-consumer"]

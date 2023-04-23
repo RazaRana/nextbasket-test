@@ -2,18 +2,30 @@
 
 namespace App\Application\Command;
 
+
+namespace App\Application\Command;
+
+use App\Domain\User\Event\UserCreatedEvent;
+
 class LogEventToFileHandler
 {
-    public function __invoke(LogEventToFileCommand $command): void
+    private string $logFilePath;
+
+    public function __construct(string $logFilePath)
     {
-        $event = $command->getEvent();
-        $logFilePath = $command->getLogFilePath();
-        var_dump($logFilePath);
+        $this->logFilePath = $logFilePath;
+    }
+
+    public function __invoke(UserCreatedEvent $event): void
+    {
+        var_dump($this->logFilePath);
         $message = sprintf(
-            "[%s] %s\n",
-            $event->getOccurredAt()->format('Y-m-d H:i:s'),
-            $event->getMessage()
+            "[%s] email: %s first name: %s last name: %s\n",
+            $event->getUserId(),
+            $event->getEmail(),
+            $event->getFirstName(),
+            $event->getLastName(),
         );
-        file_put_contents($logFilePath, $message, FILE_APPEND);
+        file_put_contents($this->logFilePath, $message, FILE_APPEND);
     }
 }
