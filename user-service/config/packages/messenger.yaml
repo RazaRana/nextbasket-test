@@ -1,5 +1,8 @@
 parameters:
-    rabbitmq_dsn: '%env(RABBITMQ_DSN)%'
+    rabbitmq_dsn: '%env(RABBITMQ_DSN_CREATE_USER)%'
+    create_user_exchange: '%env(CREATE_USER_EXCHANGE)%'
+    create_user_queue_name: '%env(CREATE_USER_QUEUE_NAME)%'
+    create_user_routing_key: '%env(CREATE_USER_ROUTING_KEY)%'
 
 framework:
     messenger:
@@ -7,7 +10,13 @@ framework:
             amqp:
                 dsn: '%rabbitmq_dsn%'
                 options:
-                    queue_name: messenger
+                    exchange:
+                        name: '%create_user_exchange%'
+                        type: direct
+                        default_publish_routing_key: '%create_user_routing_key%'
+                    queues:
+                        '%create_user_queue_name%':
+                            '%create_user_routing_key%'
                 retry_strategy:
                     max_retries: 3
                     delay: 1000

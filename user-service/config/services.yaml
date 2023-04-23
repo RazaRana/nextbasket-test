@@ -25,11 +25,11 @@ services:
     App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer:
         class: App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer
         arguments:
-            - '@messenger.transport.amqp'
+            - '@messenger.transport.rabbitmq'
     App\Application\Command\CreateUserCommandHandler:
         autowire: true
 
-    messenger.transport.amqp:
+    messenger.transport.rabbitmq:
         alias: 'App\Infrastructure\Messaging\RabbitMQ\AmqpTransport'
 
     Symfony\Component\Messenger\Transport\Sender\SenderInterface: '@messenger.transport.amqp'
@@ -44,6 +44,7 @@ services:
         arguments:
             - '@Symfony\Component\Messenger\Transport\Serialization\SerializerInterface'
             - '@rabbitmq.connection'
-            - '%env(RABBITMQ_QUEUE)%'
-            - '%env(QUEUE_NAME)%'
+            - '%env(USER_CREATED_EXCHANGE)%'
+            - '%env(USER_CREATED_QUEUE_NAME)%'
+            - '%env(USER_CREATED_ROUTING_KEY)%'
         public: true

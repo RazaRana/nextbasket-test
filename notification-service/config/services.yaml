@@ -23,5 +23,24 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     App\Application\Command\LogEventToFileHandler:
+        tags:
+            name: messenger.message_handler
+            handles: App\Domain\User\Event\UserCreatedEvent
         arguments:
             - '%env(LOG_FILE_PATH)%'
+
+    App\Application\Command\UserCreatedEventConsumerCommand:
+        arguments:
+            - '@Symfony\Component\Messenger\Worker'
+            - '%env(RABBITMQ_DSN)%'
+            - '%env(USER_CREATED_QUEUE_NAME)%'
+        tags:
+            - { name: 'console.command', command: 'app:user-created-event-consumer' }
+
+    Symfony\Component\Messenger\Transport\ReceiverInterface: '@messenger.transport.rabbitmq'
+    Symfony\Component\Messenger\Worker\HandlerRegistryInterface: '@messenger.default_bus'
+    Psr\Log\LoggerInterface: '@logger'
+    Symfony\Component\Messenger\Worker:
+        arguments:
+            - ['@Symfony\Component\Messenger\Transport\ReceiverInterface']
+            - '@Symfony\Component\Messenger\Worker\HandlerRegistryInterface'
