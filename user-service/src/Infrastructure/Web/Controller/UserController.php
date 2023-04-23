@@ -44,6 +44,7 @@ class UserController extends AbstractController
                 'message' => 'User created successfully'
             ]);
         }catch (Throwable $e) {
+            var_dump($e->getMessage());
             return new JsonResponse([
                 'err' => $e->getMessage(),
                 'file' => $e->getFile(),
