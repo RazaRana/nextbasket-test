@@ -23,7 +23,7 @@ function NewUserModal(props) {
 
     const classes = useStyles();
 
-    const {handleSubmit, email, setEmail, firstName, setFirstName,lastName, setLastName} = useCreateUser();
+    const {handleSubmit, email, setEmail, firstName, setFirstName,lastName, setLastName} = useCreateUser({handleClose});
 
     return (
         <Dialog open={isOpen} onClose={handleClose}>

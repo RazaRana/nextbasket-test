@@ -4,10 +4,12 @@ namespace App\Application\Query;
 
 use App\Domain\User\Model\User;
 use App\Domain\User\Repository\UserRepositoryInterface;
-use Symfony\Component\Messenger\Attribute\AsMessageHandler;
+use App\Stamp\ResponseStamp;
+use Symfony\Component\Messenger\Envelope;
+use Symfony\Component\Messenger\Middleware\MiddlewareInterface;
+use Symfony\Component\Messenger\Middleware\StackInterface;
 
-#[AsMessageHandler]
-class FindAllUsersQueryHandler
+class FindAllUsersQueryHandler implements MiddlewareInterface
 {
     private UserRepositoryInterface $userRepository;
 
@@ -16,11 +18,15 @@ class FindAllUsersQueryHandler
         $this->userRepository = $userRepository;
     }
 
-    public function __invoke(FindAllUsersQuery $query): array
+    public function handle(Envelope $envelope, StackInterface $stack): Envelope
     {
-        var_dump($query);
-        $users = $this->userRepository->findAll();
+        $query = $envelope->getMessage();
+        if (!$query instanceof FindAllUsersQuery) {
+            return $stack->next()->handle($envelope, $stack);
+        }
+        $users = $this->userRepository->findAllUsers();
 
-        return array_map(fn (User $user) => $user->toArray(), $users);
+        $usersArray = array_map(fn (User $user) => $user->toArray(), $users);
+        return $stack->next()->handle($envelope->with(new ResponseStamp($usersArray)), $stack);
     }
 }

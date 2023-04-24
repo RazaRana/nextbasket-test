@@ -15,7 +15,7 @@ class UserRepository implements UserRepositoryInterface
         $this->entityManager = $entityManager;
     }
 
-    public function findAll(): array
+    public function findAllUsers(): array
     {
         return $this->entityManager->getRepository(User::class)->findAll();
     }

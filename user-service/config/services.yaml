@@ -25,19 +25,21 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-    App\Application\Query\FindAllUsersQueryHandler:
-        tags:
-            name: messenger.message_handler
-            handles: App\Application\Query\FindAllUsersQuery
+    App\Infrastructure\Web\Controller\UserCreateController:
         arguments:
-            - '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineUserRepository'
-
+            - '@command.bus'
+    App\Infrastructure\Web\Controller\UserGetController:
+        arguments:
+            - '@query.bus'
     App\Domain\User\Repository\UserRepositoryInterface: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineUserRepository'
     App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer:
         class: App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer
         arguments:
             - '@messenger.transport.rabbitmq'
     App\Application\Command\CreateUserCommandHandler:
+        autowire: true
+
+    App\Application\Query\FindAllUsersQueryHandler:
         autowire: true
 
     Symfony\Component\Messenger\Transport\ReceiverInterface: '@messenger.transport.amqp'

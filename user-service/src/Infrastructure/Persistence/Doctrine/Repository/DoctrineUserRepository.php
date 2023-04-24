@@ -32,7 +32,7 @@ class DoctrineUserRepository extends ServiceEntityRepository implements UserRepo
         );
     }
 
-    public function findAll(): array
+    public function findAllUsers(): array
     {
         $doctrineUsers = $this->findAll();
 

@@ -28,7 +28,7 @@ framework:
                     - App\Application\Command\CreateUserCommandHandler
             query.bus:
                 middleware:
-                    - validation
+                    - App\Application\Query\FindAllUsersQueryHandler
 
 # when@test:
 #    framework:

@@ -184,3 +184,66 @@
 2023-04-24 04:21:11,121 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2023-04-24 04:21:13,343 INFO exited: messenger-worker (exit status 255; not expected)
 2023-04-24 04:21:14,364 INFO spawned: 'messenger-worker' with pid 163
+2023-04-24 04:21:15,616 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:21:19,798 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:21:20,818 INFO spawned: 'messenger-worker' with pid 166
+2023-04-24 04:21:22,066 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:47:10,350 WARN received SIGQUIT indicating exit request
+2023-04-24 07:47:10,355 INFO waiting for messenger-worker, php-fpm to die
+2023-04-24 07:47:11,500 INFO stopped: php-fpm (exit status 0)
+2023-04-24 07:47:11,536 INFO stopped: messenger-worker (terminated by SIGTERM)
+2023-04-24 07:47:47,280 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-04-24 07:47:47,286 INFO supervisord started with pid 1
+2023-04-24 07:47:48,290 INFO spawned: 'messenger-worker' with pid 7
+2023-04-24 07:47:48,293 INFO spawned: 'php-fpm' with pid 8
+2023-04-24 07:47:49,351 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:47:49,354 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:47:50,939 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:47:51,941 INFO spawned: 'messenger-worker' with pid 13
+2023-04-24 07:47:53,319 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:47:53,320 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:47:54,322 INFO spawned: 'messenger-worker' with pid 16
+2023-04-24 07:47:55,573 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:47:55,574 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:47:56,576 INFO spawned: 'messenger-worker' with pid 19
+2023-04-24 07:47:58,079 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:47:58,081 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:47:59,084 INFO spawned: 'messenger-worker' with pid 22
+2023-04-24 07:48:00,440 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:00,441 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:48:01,448 INFO spawned: 'messenger-worker' with pid 25
+2023-04-24 07:48:02,726 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:02,727 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:48:03,730 INFO spawned: 'messenger-worker' with pid 28
+2023-04-24 07:48:04,958 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:04,959 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:48:05,963 INFO spawned: 'messenger-worker' with pid 31
+2023-04-24 07:48:07,250 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:07,251 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:48:08,253 INFO spawned: 'messenger-worker' with pid 34
+2023-04-24 07:48:09,628 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:09,629 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:48:10,631 INFO spawned: 'messenger-worker' with pid 37
+2023-04-24 07:48:11,876 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:11,877 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:48:12,882 INFO spawned: 'messenger-worker' with pid 40
+2023-04-24 07:48:14,144 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:14,146 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 07:48:15,149 INFO spawned: 'messenger-worker' with pid 43
+2023-04-24 07:48:16,354 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:48:58,593 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 07:48:59,626 INFO spawned: 'messenger-worker' with pid 46
+2023-04-24 07:49:00,854 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:49:02,127 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 07:49:03,141 INFO spawned: 'messenger-worker' with pid 49
+2023-04-24 07:49:04,379 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:49:06,596 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 07:49:07,612 INFO spawned: 'messenger-worker' with pid 52
+2023-04-24 07:49:08,847 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 07:49:13,012 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 07:49:14,031 INFO spawned: 'messenger-worker' with pid 55
+2023-04-24 07:49:15,275 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 08:13:14,094 WARN received SIGQUIT indicating exit request
+2023-04-24 08:13:14,102 INFO waiting for messenger-worker, php-fpm to die
+2023-04-24 08:13:15,136 INFO stopped: php-fpm (exit status 0)
+2023-04-24 08:13:16,174 INFO stopped: messenger-worker (terminated by SIGTERM)

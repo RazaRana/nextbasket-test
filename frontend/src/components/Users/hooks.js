@@ -15,7 +15,7 @@ const useCreateUserModel = () => {
     }
 };
 
-const useCreateUser = () => {
+const useCreateUser = ({handleClose}) => {
     const { createUser } = useUserContext();
 
     const [email, setEmail] = useState('');
@@ -24,6 +24,7 @@ const useCreateUser = () => {
 
     const handleSubmit = () => {
         createUser({email,firstName,lastName});
+        handleClose();
     };
     return {handleSubmit, email, setEmail, firstName, setFirstName,lastName, setLastName}
 };

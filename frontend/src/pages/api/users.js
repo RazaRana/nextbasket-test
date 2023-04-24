@@ -12,11 +12,9 @@ export default async function handler(req, res) {
         case "GET": {
             try {
                 const response = await api.get("/users");
-                console.log(response)
-                const users = response.data;
-                res.status(200).json(users);
+                const data = response.data;
+                res.status(200).json(data);
             } catch (error) {
-                //console.error(error);
                 res.status(500).json({ message: "Failed to fetch users" });
             }
             break;

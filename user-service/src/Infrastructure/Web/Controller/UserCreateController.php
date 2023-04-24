@@ -3,17 +3,14 @@
 namespace App\Infrastructure\Web\Controller;
 
 use App\Application\Command\CreateUserCommand;
-use App\Application\Query\FindAllUsersQuery;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
-use Symfony\Component\Messenger\Stamp\HandledStamp;
 use Throwable;
 
-class UserController extends AbstractController
+class UserCreateController extends AbstractController
 {
 
     private MessageBusInterface $messageBus;
@@ -46,28 +43,6 @@ class UserController extends AbstractController
             ]);
         }catch (Throwable $e) {
             var_dump($e->getMessage());
-            return new JsonResponse([
-                'err' => $e->getMessage(),
-                'file' => $e->getFile(),
-                'line' => $e->getLine(),
-                'trace' => $e->getTrace(),
-                'status' => 'error',
-                'message' => 'An error occurred while processing the request'
-            ], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    public function getAllUsers(): Response
-    {
-        $query = new FindAllUsersQuery();
-
-        try {
-            $envelope = $this->messageBus->dispatch($query);
-
-            var_dump($envelope->getMessage());
-
-            return new JsonResponse(['users' => $envelope]);
-        }catch (Throwable $e) {
             return new JsonResponse([
                 'err' => $e->getMessage(),
                 'file' => $e->getFile(),

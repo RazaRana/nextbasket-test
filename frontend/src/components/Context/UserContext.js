@@ -9,11 +9,11 @@ export const UserProvider = ({ children }) => {
 
     const fetchUsers = async () => {
         try {
+            console.log("Fetching users...");
             const res = await fetch("/api/users");
             const data = await res.json()
-            console.log(res)
-            console.log(data)
-            //setUsers(data?.users||[]);
+            console.log("Users:", data.users);
+            setUsers(data?.users);
         } catch (error) {
             console.error(error);
         }
@@ -28,8 +28,8 @@ export const UserProvider = ({ children }) => {
                     "Content-Type": "application/json",
                 },
             });
-            const data = await res.json();
-            setUsers([...users, data]);
+            await res.json();
+            await fetchUsers();
         } catch (error) {
             console.error(error);
         }

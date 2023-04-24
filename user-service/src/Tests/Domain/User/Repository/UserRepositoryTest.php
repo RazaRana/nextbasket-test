@@ -27,7 +27,7 @@ class UserRepositoryTest extends TestCase
 
         $this->userRepository->method('findAll')->willReturn([$user1, $user2]);
 
-        $users = $this->userRepository->findAll();
+        $users = $this->userRepository->findAllUsers();
 
         $this->assertIsArray($users);
         $this->assertContainsOnlyInstancesOf(User::class, $users);

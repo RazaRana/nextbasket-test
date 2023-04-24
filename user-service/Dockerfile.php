@@ -8,7 +8,6 @@ RUN apt-get update && \
     unzip \
     libicu-dev \
     libzip-dev \
-    supervisor \
     librabbitmq-dev \
     && docker-php-ext-install intl zip pdo_mysql \
     && docker-php-ext-install sockets \
@@ -21,11 +20,6 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Copy Supervisor configuration file
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-# Expose port 9000 for PHP-FPM
 EXPOSE 9000
 
-# Start Supervisor
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["php-fpm"]

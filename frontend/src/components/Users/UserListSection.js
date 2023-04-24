@@ -22,10 +22,15 @@ function UserListSection() {
     const classes = useStyles();
 
     const { users, fetchUsers } = useUserContext();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetchUsers();
-    },[users]);
+        const fetchData = async () => {
+            await fetchUsers();
+            setLoading(false);
+        };
+        fetchData();
+    }, []);
 
     const {
         handleOpenModal,
@@ -46,10 +51,15 @@ function UserListSection() {
             >
                 Add User
             </Button>
-            <UserList users={users}/>
+            {loading ? (
+                <Typography>Loading...</Typography>
+            ) : (
+                <UserList users={users} />
+            )}
             <NewUserModal isOpen={isModalOpen} handleClose={handleCloseModal} />
         </Box>
     );
 }
+
 
 export default UserListSection;

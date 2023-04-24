@@ -1,9 +1,9 @@
 users_create:
     path: /users
     methods: [POST]
-    controller: App\Infrastructure\Web\Controller\UserController::createUser
+    controller: App\Infrastructure\Web\Controller\UserCreateController::createUser
 
 users_list:
     path: /users
     methods: [GET]
-    controller: App\Infrastructure\Web\Controller\UserController::getAllUsers
+    controller: App\Infrastructure\Web\Controller\UserGetController::getAllUsers

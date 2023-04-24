@@ -3,8 +3,7 @@
 namespace App\Tests\Web\Controller;
 
 use App\Application\Command\CreateUserCommand;
-use App\Domain\User\Model\User;
-use App\Infrastructure\Web\Controller\UserController;
+use App\Infrastructure\Web\Controller\UserCreateController;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,13 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
-use Symfony\Component\Messenger\Stamp\HandledStamp;
-use Throwable;
+
 
 class UserControllerTest extends TestCase
 {
     private MessageBusInterface $commandBus;
-    private UserController $userController;
+    private UserCreateController $userController;
 
     /**
      * @throws Exception
@@ -26,7 +24,7 @@ class UserControllerTest extends TestCase
     protected function setUp(): void
     {
         $this->commandBus = $this->createMock(MessageBusInterface::class);
-        $this->userController = new UserController($this->commandBus);
+        $this->userController = new UserCreateController($this->commandBus);
     }
 
     public function testCreateUserWithValidData(): void
