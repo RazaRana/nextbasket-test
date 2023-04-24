@@ -2,14 +2,15 @@
 
 namespace App\Infrastructure\Web\Controller;
 
-use App\Domain\User\Model\User;
 use App\Application\Command\CreateUserCommand;
-use App\Infrastructure\Messaging\RabbitMQ\Producer\RabbitMQUserProducer;
+use App\Application\Query\FindAllUsersQuery;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Symfony\Component\Messenger\Stamp\HandledStamp;
 use Throwable;
 
 class UserController extends AbstractController
@@ -58,12 +59,23 @@ class UserController extends AbstractController
 
     public function getAllUsers(): Response
     {
-        $users = $this->userRepository->findAll();
+        $query = new FindAllUsersQuery();
 
-        $userArray = array_map(function (User $user) {
-            return $user->toArray();
-        }, $users);
+        try {
+            $envelope = $this->messageBus->dispatch($query);
 
-        return new JsonResponse($userArray);
+            var_dump($envelope->getMessage());
+
+            return new JsonResponse(['users' => $envelope]);
+        }catch (Throwable $e) {
+            return new JsonResponse([
+                'err' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTrace(),
+                'status' => 'error',
+                'message' => 'An error occurred while processing the request'
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 }

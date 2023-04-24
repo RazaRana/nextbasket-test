@@ -65,6 +65,10 @@ services:
       - ./db-data:/var/lib/mysql
     networks:
       - user-service_network
+#  frontend:
+#    build: ./frontend
+#    ports:
+#      - "3000:3000"
 
 
 networks:

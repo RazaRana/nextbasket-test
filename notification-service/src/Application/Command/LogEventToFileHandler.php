@@ -2,9 +2,6 @@
 
 namespace App\Application\Command;
 
-
-namespace App\Application\Command;
-
 use App\Domain\User\Event\UserCreatedEvent;
 
 class LogEventToFileHandler

@@ -1,0 +1,186 @@
+2023-04-24 04:06:12,924 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-04-24 04:06:12,938 INFO supervisord started with pid 1
+2023-04-24 04:06:13,944 INFO spawned: 'messenger-worker' with pid 7
+2023-04-24 04:06:13,945 INFO spawned: 'php-fpm' with pid 8
+2023-04-24 04:06:14,978 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:06:14,981 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:06:18,432 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:06:19,434 INFO spawned: 'messenger-worker' with pid 13
+2023-04-24 04:06:20,700 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:06:20,701 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:06:21,703 INFO spawned: 'messenger-worker' with pid 16
+2023-04-24 04:06:22,917 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:06:22,917 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:06:23,919 INFO spawned: 'messenger-worker' with pid 19
+2023-04-24 04:06:25,105 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:06:25,106 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:06:26,111 INFO spawned: 'messenger-worker' with pid 22
+2023-04-24 04:06:27,303 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:06:27,304 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:06:28,307 INFO spawned: 'messenger-worker' with pid 25
+2023-04-24 04:06:29,549 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:06:29,550 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:06:30,552 INFO spawned: 'messenger-worker' with pid 28
+2023-04-24 04:06:31,968 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:11:35,973 WARN received SIGQUIT indicating exit request
+2023-04-24 04:11:35,976 INFO waiting for messenger-worker, php-fpm to die
+2023-04-24 04:11:37,020 INFO stopped: php-fpm (exit status 0)
+2023-04-24 04:11:37,044 INFO stopped: messenger-worker (terminated by SIGTERM)
+2023-04-24 04:12:02,994 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-04-24 04:12:03,001 INFO supervisord started with pid 1
+2023-04-24 04:12:04,005 INFO spawned: 'messenger-worker' with pid 7
+2023-04-24 04:12:04,007 INFO spawned: 'php-fpm' with pid 8
+2023-04-24 04:12:05,666 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:05,666 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:05,667 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:06,669 INFO spawned: 'messenger-worker' with pid 13
+2023-04-24 04:12:07,957 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:07,958 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:08,961 INFO spawned: 'messenger-worker' with pid 16
+2023-04-24 04:12:10,155 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:10,155 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:11,157 INFO spawned: 'messenger-worker' with pid 19
+2023-04-24 04:12:12,345 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:12,346 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:13,349 INFO spawned: 'messenger-worker' with pid 22
+2023-04-24 04:12:14,559 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:14,560 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:15,565 INFO spawned: 'messenger-worker' with pid 25
+2023-04-24 04:12:16,773 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:16,774 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:17,777 INFO spawned: 'messenger-worker' with pid 28
+2023-04-24 04:12:19,067 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:19,069 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:20,074 INFO spawned: 'messenger-worker' with pid 31
+2023-04-24 04:12:21,552 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:21,554 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:22,557 INFO spawned: 'messenger-worker' with pid 34
+2023-04-24 04:12:24,539 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:24,543 INFO exited: messenger-worker (exit status 1; not expected)
+2023-04-24 04:12:25,550 INFO spawned: 'messenger-worker' with pid 37
+2023-04-24 04:12:26,980 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:41,179 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:12:42,199 INFO spawned: 'messenger-worker' with pid 40
+2023-04-24 04:12:43,457 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:44,776 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:12:45,791 INFO spawned: 'messenger-worker' with pid 43
+2023-04-24 04:12:47,053 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:49,248 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:12:50,263 INFO spawned: 'messenger-worker' with pid 46
+2023-04-24 04:12:51,514 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:12:55,722 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:12:56,728 INFO spawned: 'messenger-worker' with pid 49
+2023-04-24 04:12:57,990 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:04,311 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:05,334 INFO spawned: 'messenger-worker' with pid 52
+2023-04-24 04:14:06,654 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:07,942 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:08,957 INFO spawned: 'messenger-worker' with pid 55
+2023-04-24 04:14:10,226 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:12,424 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:13,442 INFO spawned: 'messenger-worker' with pid 58
+2023-04-24 04:14:14,688 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:18,878 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:19,896 INFO spawned: 'messenger-worker' with pid 61
+2023-04-24 04:14:21,133 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:46,312 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:47,331 INFO spawned: 'messenger-worker' with pid 64
+2023-04-24 04:14:48,688 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:49,784 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:50,796 INFO spawned: 'messenger-worker' with pid 67
+2023-04-24 04:14:52,162 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:52,165 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:53,170 INFO spawned: 'messenger-worker' with pid 70
+2023-04-24 04:14:54,661 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:54,666 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:55,678 INFO spawned: 'messenger-worker' with pid 73
+2023-04-24 04:14:57,077 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:57,084 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:14:58,098 INFO spawned: 'messenger-worker' with pid 76
+2023-04-24 04:14:59,507 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:14:59,516 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:15:00,522 INFO spawned: 'messenger-worker' with pid 79
+2023-04-24 04:15:01,779 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:15:03,979 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:15:04,994 INFO spawned: 'messenger-worker' with pid 82
+2023-04-24 04:15:06,358 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:15:06,370 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:15:07,379 INFO spawned: 'messenger-worker' with pid 85
+2023-04-24 04:15:08,618 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:15:44,862 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:15:45,877 INFO spawned: 'messenger-worker' with pid 88
+2023-04-24 04:15:47,128 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:15:48,324 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:15:49,339 INFO spawned: 'messenger-worker' with pid 91
+2023-04-24 04:15:50,580 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:15:52,771 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:15:53,787 INFO spawned: 'messenger-worker' with pid 94
+2023-04-24 04:15:55,029 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:15:59,231 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:16:00,251 INFO spawned: 'messenger-worker' with pid 97
+2023-04-24 04:16:01,507 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:16:40,778 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:16:41,800 INFO spawned: 'messenger-worker' with pid 100
+2023-04-24 04:16:43,042 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:16:44,226 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:16:45,241 INFO spawned: 'messenger-worker' with pid 103
+2023-04-24 04:16:46,483 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:16:48,679 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:16:49,698 INFO spawned: 'messenger-worker' with pid 106
+2023-04-24 04:16:50,946 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:16:55,121 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:16:56,130 INFO spawned: 'messenger-worker' with pid 109
+2023-04-24 04:16:57,368 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:17:38,644 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:17:39,665 INFO spawned: 'messenger-worker' with pid 112
+2023-04-24 04:17:40,936 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:17:42,101 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:17:43,118 INFO spawned: 'messenger-worker' with pid 115
+2023-04-24 04:17:44,384 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:17:46,600 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:17:47,616 INFO spawned: 'messenger-worker' with pid 118
+2023-04-24 04:17:48,863 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:17:53,036 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:17:54,041 INFO spawned: 'messenger-worker' with pid 121
+2023-04-24 04:17:55,281 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:19:23,594 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:19:24,623 INFO spawned: 'messenger-worker' with pid 124
+2023-04-24 04:19:25,882 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:19:27,061 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:19:28,071 INFO spawned: 'messenger-worker' with pid 127
+2023-04-24 04:19:29,412 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:19:31,637 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:19:32,651 INFO spawned: 'messenger-worker' with pid 130
+2023-04-24 04:19:33,659 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:19:36,740 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:19:37,756 INFO spawned: 'messenger-worker' with pid 133
+2023-04-24 04:19:39,023 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:19:40,186 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:19:41,196 INFO spawned: 'messenger-worker' with pid 136
+2023-04-24 04:19:42,503 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:19:44,700 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:19:45,724 INFO spawned: 'messenger-worker' with pid 139
+2023-04-24 04:19:47,075 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:19:51,300 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:19:52,305 INFO spawned: 'messenger-worker' with pid 142
+2023-04-24 04:19:53,307 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:20:16,504 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:20:17,519 INFO spawned: 'messenger-worker' with pid 145
+2023-04-24 04:20:18,761 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:20:19,927 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:20:20,941 INFO spawned: 'messenger-worker' with pid 148
+2023-04-24 04:20:22,305 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:20:24,513 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:20:25,532 INFO spawned: 'messenger-worker' with pid 151
+2023-04-24 04:20:26,831 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:20:31,048 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:20:32,065 INFO spawned: 'messenger-worker' with pid 154
+2023-04-24 04:20:33,310 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:21:05,500 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:21:06,512 INFO spawned: 'messenger-worker' with pid 157
+2023-04-24 04:21:07,730 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:21:08,895 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:21:09,903 INFO spawned: 'messenger-worker' with pid 160
+2023-04-24 04:21:11,121 INFO success: messenger-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-04-24 04:21:13,343 INFO exited: messenger-worker (exit status 255; not expected)
+2023-04-24 04:21:14,364 INFO spawned: 'messenger-worker' with pid 163

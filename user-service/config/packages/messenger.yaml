@@ -13,20 +13,22 @@ framework:
                     exchange:
                         name: '%create_user_exchange%'
                         type: direct
-                        default_publish_routing_key: '%create_user_routing_key%'
                     queues:
-                        '%create_user_queue_name%':
-                            '%create_user_routing_key%'
+                        '%create_user_queue_name%': '~'
                 retry_strategy:
                     max_retries: 3
                     delay: 1000
         routing:
             'App\Application\Command\CreateUserCommand': amqp
+            'App\Application\Query\FindAllUsersQuery': amqp
+        default_bus: query.bus
         buses:
             command.bus:
                 middleware:
                     - App\Application\Command\CreateUserCommandHandler
-                default_middleware: true
+            query.bus:
+                middleware:
+                    - validation
 
 # when@test:
 #    framework:
