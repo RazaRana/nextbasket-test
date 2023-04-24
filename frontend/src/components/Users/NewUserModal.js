@@ -14,7 +14,19 @@ const useStyles = makeStyles((theme) => ({
     form: {
         display: 'flex',
         flexDirection: 'column',
-        gap: theme.spacing(2),
+        gap: theme.spacing(3),
+    },
+    error: {
+        color: theme.palette.error.main,
+        marginTop: theme.spacing(1),
+    },
+    input: {
+        width: '100%',
+        marginBottom: theme.spacing(2),
+    },
+    button: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
     },
 }));
 
@@ -38,6 +50,7 @@ function NewUserModal(props) {
                         required
                         error={!!errors.email}
                         helperText={errors.email}
+                        className={classes.input}
                     />
                     <TextField
                         label="First Name"
@@ -46,6 +59,7 @@ function NewUserModal(props) {
                         required
                         error={!!errors.firstName}
                         helperText={errors.firstName}
+                        className={classes.input}
                     />
                     <TextField
                         label="Last Name"
@@ -54,14 +68,15 @@ function NewUserModal(props) {
                         required
                         error={!!errors.lastName}
                         helperText={errors.lastName}
+                        className={classes.input}
                     />
                 </form>
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose} color="secondary">
+                <Button onClick={handleClose} color="secondary" className={classes.button}>
                     Cancel
                 </Button>
-                <Button onClick={handleSave} color="primary">
+                <Button onClick={handleSave} color="primary" className={classes.button}>
                     Save
                 </Button>
             </DialogActions>
