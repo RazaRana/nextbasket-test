@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Button,
@@ -8,7 +8,7 @@ import {
     DialogActions,
     TextField,
 } from '@material-ui/core';
-import {useCreateUser} from "@/components/Users/hooks";
+import {useCreateUser, useValidateUserCreation} from "@/components/Users/hooks";
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -25,6 +25,7 @@ function NewUserModal(props) {
 
     const {handleSubmit, email, setEmail, firstName, setFirstName,lastName, setLastName} = useCreateUser({handleClose});
 
+    const {handleSave, errors} = useValidateUserCreation({handleSubmit,email, firstName, lastName});
     return (
         <Dialog open={isOpen} onClose={handleClose}>
             <DialogTitle>Create New User</DialogTitle>
@@ -35,18 +36,24 @@ function NewUserModal(props) {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        error={!!errors.email}
+                        helperText={errors.email}
                     />
                     <TextField
                         label="First Name"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         required
+                        error={!!errors.firstName}
+                        helperText={errors.firstName}
                     />
                     <TextField
                         label="Last Name"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         required
+                        error={!!errors.lastName}
+                        helperText={errors.lastName}
                     />
                 </form>
             </DialogContent>
@@ -54,7 +61,7 @@ function NewUserModal(props) {
                 <Button onClick={handleClose} color="secondary">
                     Cancel
                 </Button>
-                <Button onClick={handleSubmit} color="primary">
+                <Button onClick={handleSave} color="primary">
                     Save
                 </Button>
             </DialogActions>

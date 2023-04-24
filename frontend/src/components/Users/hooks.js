@@ -29,4 +29,45 @@ const useCreateUser = ({handleClose}) => {
     return {handleSubmit, email, setEmail, firstName, setFirstName,lastName, setLastName}
 };
 
-export {useCreateUserModel,useCreateUser};
+const useValidateUserCreation = ({handleSubmit,email, firstName, lastName}) => {
+    const [errors, setErrors] = useState({ email: '', firstName: '', lastName: '' });
+
+    const validate = () => {
+        let isValid = true;
+        const newErrors = { email: '', firstName: '', lastName: '' };
+
+        if (!email) {
+            newErrors.email = 'Email is required';
+            isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            newErrors.email = 'Email is invalid';
+            isValid = false;
+        }
+
+        if (!firstName) {
+            newErrors.firstName = 'First name is required';
+            isValid = false;
+        }
+
+        if (!lastName) {
+            newErrors.lastName = 'Last name is required';
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
+
+    const handleSave = () => {
+        if (validate()) {
+            handleSubmit();
+        }
+    };
+    return {handleSave, errors}
+};
+
+export {
+    useCreateUserModel,
+    useCreateUser,
+    useValidateUserCreation
+};

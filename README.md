@@ -18,6 +18,7 @@ My App is a microservices-based application that consists of two microservices: 
 
 ### Frontend
 - Navigate to the project directory: cd nextbasket-test/frontend
+- Create file .env.local and add variable API_BASE_URL=http://localhost:80
 - Run npm build
 - Run npm start
 
